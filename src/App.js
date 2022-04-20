@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useState, useEffect } from 'react'
+import HomePage from './Components/HomePage/HomePage'
+import { Route, Routes } from 'react-router-dom'
 
-function App() {
+const App = () => {
+  const [todaysWow, setTodaysWow] = useState(/*fetch random wow*/)
+  const [owenGraphic, setOwenGraphic] = useState(/*imported graphic */)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <section className='App'>
+      <Routes>
+        <Route exact path='/' element={<HomePage />} />
+      </Routes>
+    </section>
+  )
 }
 
-export default App;
+export default App

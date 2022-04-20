@@ -1,47 +1,7 @@
-.page-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-}
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&display=swap');
 
-.owen-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100vh;
-  width: 50vw;
-  background-color: #ef476f;
-}
-
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 50vw;
-  background-color: #118ab2;
-}
-
-.about-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  width: 30vw;
-  background-color: #06d6a0;
-  border: 5px solid black;
-  border-radius: 1em;
-}
-
-.about-text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 50vh;
-  width: 30vw;
-  background-color: #ffd166;
-  border: 5px solid black;
-  border-radius: 1em;
+h1,
+p {
+  font-family: 'Anybody', cursive;
+  font-weight: bold;
 }

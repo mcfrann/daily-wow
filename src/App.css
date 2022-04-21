@@ -5,3 +5,8 @@ p {
   font-family: 'Anybody', cursive;
   font-weight: bold;
 }
+
+p {
+  /* font-size: 1.1rem; */
+  font-size: 120%;
+}

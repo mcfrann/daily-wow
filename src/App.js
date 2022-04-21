@@ -68,6 +68,8 @@ const App = () => {
       setFilteredWows(allWows.filter((movie) => movie.movie == searchInput))
       setPage('filtered')
     }
+    setHeader(`Wows in ${searchInput}`)
+    searchInput = ''
   }
 
   return (

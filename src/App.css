@@ -10,3 +10,79 @@ p {
   /* font-size: 1.1rem; */
   font-size: 120%;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+.owen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 50vw;
+  background-color: #ef476f;
+  font-size: 0;
+}
+
+.owen-graphic {
+  width: 100%;
+}
+
+.owen-graphic:hover {
+  cursor: pointer;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  background-color: #118ab2;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 90%;
+  margin-top: 2vh;
+}
+
+.search {
+  border-radius: 1em;
+  margin-right: 0.5em;
+  font-family: 'Anybody', cursive;
+  padding: 0.5em;
+  border: 4px solid black;
+}
+
+.like,
+.search-img {
+  height: 4vh;
+  margin-right: 0.5em;
+}
+
+.about-windows {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 40vw;
+  background-color: #06d6a0;
+  border: 5px solid black;
+  border-radius: 1em;
+}

@@ -2,15 +2,14 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import HomePage from './Components/HomePage/HomePage'
 import { Route, Routes } from 'react-router-dom'
+import FilteredPage from './Components/FilteredPage/FilteredPage'
 
 const App = () => {
-  const [todaysWow, setTodaysWow] = useState(/*fetch random wow*/)
-  const [owenGraphic, setOwenGraphic] = useState(/*imported graphic */)
-
   return (
     <section className='App'>
       <Routes>
         <Route exact path='/' element={<HomePage />} />
+        <Route path='/filtered' element={<FilteredPage />} />
       </Routes>
     </section>
   )

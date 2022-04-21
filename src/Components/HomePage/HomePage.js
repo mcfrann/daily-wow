@@ -51,21 +51,12 @@ const HomePage = () => {
   }
 
   const fetchAll = () => {
-    return (
-      fetch('https://owen-wilson-wow-api.herokuapp.com/wows/ordered/0-90')
-        .then((response) => response.json())
-        // .then((res) => {
-        //   if (!res.ok) {
-        //     console.log(res)
-        //     setError('Wow. There are no movies.')
-        //   } else {
-        //     return res.json()
-        //   }
-        // })
-        .then((movies) => {
-          setAllWows((previousMovies) => movies)
-        })
-    )
+    return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/ordered/0-90')
+      .then((response) => response.json())
+      .then((movies) => {
+        setAllWows((previousMovies) => movies)
+      })
+      .catch((error) => setError('Wow.There are no movies.'))
   }
 
   const findWow = () => {
@@ -105,7 +96,6 @@ const HomePage = () => {
               onClick={findWow}
             />
           </Link>
-          <img className='like' src={like} alt='favorites page' />
         </div>
         <div className='about-windows'>
           <h1 className='about-header'>Your Daily Wow</h1>
@@ -120,22 +110,18 @@ const HomePage = () => {
                   duration of the film. This particular 'wow' occurs at{' '}
                   {todaysWow.timestamp} of the movie.
                   <br />
+                  <br />
+                  Full line: "{todaysWow.full_line}"
+                  <br />
+                  <br />
                   Click on Owen to hear it!
                 </p>
-                <p className='full-line'>{todaysWow.full_line}</p>
               </>
             ) : todaysWow === [] && error ? (
               <p className='about-text'>{error}</p>
             ) : (
               <p className='about-text'>Loading...</p>
             )}
-            <div className='like-section'>
-              <img
-                className='like-wow shake-horizontal'
-                src={like}
-                alt='like this wow'
-              />
-            </div>
           </div>
         </div>
       </div>

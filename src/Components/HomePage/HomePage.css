@@ -12,6 +12,15 @@
   height: 100vh;
   width: 50vw;
   background-color: #ef476f;
+  font-size: 0;
+}
+
+.owen-graphic {
+  width: 100%;
+}
+
+.owen-graphic:hover {
+  cursor: pointer;
 }
 
 .about-container {
@@ -78,5 +87,89 @@
 }
 
 .about-text {
-  padding: 2em;
+  padding: 0.5em;
+  line-height: 2;
+}
+
+.like-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid blue; */
+}
+
+.like-wow {
+  height: 6vh;
+  margin-bottom: 1.5em;
+  margin-right: 1.5em;
+}
+
+.shake-horizontal:hover {
+  -webkit-animation: shake-horizontal 0.8s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  80% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  90% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+    transform: translateX(-8px);
+  }
+}
+
+button {
+  all: unset;
+  margin: 0;
 }

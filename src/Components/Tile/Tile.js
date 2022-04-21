@@ -1,24 +1,31 @@
 import './Tile.css'
+import { useState } from 'react'
+import owen from '../../images/owen-silent.jpg'
+import owen2 from '../../images/owen-opening.jpg'
+import owen3 from '../../images/owen-open.jpg'
 
-const Tile = ({ key, movie, currentWow, audio }) => {
-  const number = ({ currentWow }) => {
-    switch (currentWow.toString().split('').pop()) {
-      case 1:
-        return `1st`
-      case 2:
-        return `2nd`
-      case 3:
-        return `3rd`
-      default:
-        return `${currentWow}th`
-    }
+const Tile = ({ key, movie, currentWow, fullLine, totalWow, audio }) => {
+  // const [wow, setWow] = useState(audio)
+  const [owenGraphic, setOwenGraphic] = useState(owen)
+
+  const start = () => {
+    const newWow = new Audio(audio)
+    newWow.play()
+    setTimeout(() => setOwenGraphic(owen2), 200)
+    setTimeout(() => setOwenGraphic(owen3), 400)
+    setTimeout(() => setOwenGraphic(owen2), 600)
+    setTimeout(() => setOwenGraphic(owen), 800)
   }
 
   return (
     <div className='wow-tile' id={key}>
-      <h1>{movie}</h1>
-      <p>This is the {number} occurance of 'wow' in this film.</p>
-      <button>play</button>
+      <h1>
+        Wow #{currentWow} of {movie}
+      </h1>
+      <p>The full line is: '{fullLine}'</p>
+      <button className='play-wow' onClick={start}>
+        play
+      </button>
     </div>
   )
 }

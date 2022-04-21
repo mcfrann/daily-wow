@@ -1,0 +1,8 @@
+.wow-tile {
+  background-color: #ffd166;
+  border: 5px solid black;
+  border-radius: 1em;
+  height: 30vh;
+  width: 30vw;
+  margin: 5%;
+}

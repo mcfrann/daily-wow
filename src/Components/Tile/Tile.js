@@ -1,20 +1,9 @@
 import './Tile.css'
-import { useState } from 'react'
-import owen from '../../images/owen-silent.jpg'
-import owen2 from '../../images/owen-opening.jpg'
-import owen3 from '../../images/owen-open.jpg'
 
-const Tile = ({ key, movie, currentWow, fullLine, totalWow, audio }) => {
-  // const [wow, setWow] = useState(audio)
-  const [owenGraphic, setOwenGraphic] = useState(owen)
-
+const Tile = ({ key, movie, currentWow, fullLine, audio }) => {
   const start = () => {
-    const newWow = new Audio(audio)
-    newWow.play()
-    setTimeout(() => setOwenGraphic(owen2), 200)
-    setTimeout(() => setOwenGraphic(owen3), 400)
-    setTimeout(() => setOwenGraphic(owen2), 600)
-    setTimeout(() => setOwenGraphic(owen), 800)
+    const wow = new Audio(audio)
+    wow.play()
   }
 
   return (

@@ -3,20 +3,18 @@ import { useState, useEffect } from 'react'
 import HomePage from './Components/HomePage/HomePage'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import FilteredPage from './Components/FilteredPage/FilteredPage'
-import owen from './images/owen-silent.jpg'
-import owen2 from './images/owen-opening.jpg'
-import owen3 from './images/owen-open.jpg'
+import Owen from './Components/Owen/Owen'
+import Oops from './Components/Oops/Oops'
+import owen from './images/owen.jpg'
+import owen2 from './images/owen-w.JPG'
+import owen3 from './images/owen-o.JPG'
 import search from './images/search.png'
-import Search from './Components/Search/Search'
 
 const App = () => {
   const [todaysWow, setTodaysWow] = useState([])
   const [error, setError] = useState('')
-  const [owenGraphic, setOwenGraphic] = useState(owen)
   const [filteredWows, setFilteredWows] = useState([])
   const [allWows, setAllWows] = useState([])
-  const [header, setHeader] = useState('Your Daily Wow')
-  const [page, setPage] = useState('home')
   const [input, setInput] = useState('')
   const navigate = useNavigate()
 
@@ -24,15 +22,6 @@ const App = () => {
     fetchRandom()
     fetchAll()
   }, [])
-
-  const start = () => {
-    const audio = new Audio(todaysWow.audio)
-    audio.play()
-    setTimeout(() => setOwenGraphic(owen2), 200)
-    setTimeout(() => setOwenGraphic(owen3), 400)
-    setTimeout(() => setOwenGraphic(owen2), 600)
-    setTimeout(() => setOwenGraphic(owen), 800)
-  }
 
   const fetchRandom = () => {
     return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/random')
@@ -71,7 +60,6 @@ const App = () => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log(filteredWows)
     const filter = allWows.filter(
       (movie) => movie.movie.toLowerCase() == input.toLowerCase()
     )
@@ -79,10 +67,9 @@ const App = () => {
       alert('please insert an Owen Wilson movie')
     } else {
       setFilteredWows(filter)
+      setInput('')
+      navigate('/filtered')
     }
-    setHeader(`wows in ${input}`)
-    setInput('')
-    navigate('/filtered')
   }
 
   const updateInput = (e) => {
@@ -92,23 +79,19 @@ const App = () => {
   return (
     <section className='App'>
       <div className='page-container'>
-        <div className='owen-container'>
-          <img
-            className='owen-graphic'
-            src={owenGraphic}
-            alt='owen graphic'
-            onClick={start}
-          />
-        </div>
+        <Owen todaysWow={todaysWow} />
         <div className='about-container'>
           <div className='top-nav'>
-            <input
-              className='search'
-              value={input}
-              onChange={updateInput}
-              type='text'
-              placeholder='wows by movie'
-            ></input>
+            <form>
+              <input
+                className='search'
+                value={input}
+                onChange={updateInput}
+                type='text'
+                placeholder='wows by movie'
+                required
+              ></input>
+            </form>
             <img
               className='search-img'
               src={search}
@@ -127,12 +110,8 @@ const App = () => {
                 path='/filtered'
                 element={<FilteredPage filteredWows={filteredWows} />}
               />
+              <Route path='/oops' element={<Oops />} />
             </Routes>
-            {/* {page === 'home' ? (
-              <HomePage path='/' todaysWow={todaysWow} error={error} />
-            ) : (
-              <FilteredPage path='/filtered' filteredWows={filteredWows} />
-            )} */}
           </div>
         </div>
       </div>

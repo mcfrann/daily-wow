@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Lobster&display=swap');
 
-h1,
-p {
-  font-family: 'Anybody', cursive;
-  font-weight: bold;
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
 }
 
 p {
-  /* font-size: 1.1rem; */
+  font-family: 'Anybody', cursive;
+  font-weight: bold;
   font-size: 120%;
 }
 
@@ -18,22 +19,30 @@ p {
   width: 100vw;
 }
 
-.owen-container {
+.top-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-end;
-  height: 100vh;
-  width: 50vw;
-  background-color: #ef476f;
-  font-size: 0;
+  align-items: center;
+  height: 6vh;
+  width: 90%;
 }
 
-.owen-graphic {
-  width: 100%;
+.search-img {
+  height: 4vh;
 }
 
-.owen-graphic:hover {
+.search-img:hover {
   cursor: pointer;
+}
+
+.search {
+  border: 4px solid black;
+  border-radius: 1em;
+  height: 3vh;
+  margin-right: 0.5vw;
+  font-family: 'Anybody', cursive;
+  padding-left: 0.5em;
 }
 
 .about-container {

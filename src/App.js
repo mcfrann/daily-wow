@@ -51,22 +51,33 @@ const App = () => {
 
   const fetchAll = () => {
     return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/ordered/0-90')
-      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) {
+          setError('Wow. Nothing is here.')
+        } else {
+          return res.json()
+        }
+      })
       .then((movies) => {
         setAllWows((previousMovies) => movies)
       })
-      .catch((error) => setError('Wow.There are no movies.'))
   }
 
   const handleClick = (e) => {
     e.preventDefault()
-    const filter = allWows.filter(
-      (movie) => movie.movie.toLowerCase() == input.toLowerCase()
-    )
+    const filtered = []
+    for (let i = 0; i < allWows.length; i++) {
+      if (input.toLowerCase() === allWows[i].movie.toLowerCase()) {
+        filtered.push(allWows[i])
+      }
+    }
     if (!input) {
       alert('please insert an Owen Wilson movie')
-    } else {
-      setFilteredWows(filter)
+    } else if (input && filtered.length === 0) {
+      navigate('/oops')
+      setInput('')
+    } else if (input && filtered.length > 0) {
+      setFilteredWows(filtered)
       setInput('')
       navigate('/filtered')
     }

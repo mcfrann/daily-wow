@@ -1,0 +1,32 @@
+.oops-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  height: 20vh;
+  width: 40vw;
+  border: 5px solid black;
+  border-radius: 1em;
+  background-color: #ef476f;
+  margin-bottom: 2em;
+}
+
+.oops-text {
+  margin: 1em;
+  line-height: 2;
+  text-align: center;
+}
+
+.back-home {
+  background-color: #06d6a0;
+  font-family: 'Anybody', cursive;
+  border: 3px solid black;
+  border-radius: 1em;
+  height: 5vh;
+  width: 15vw;
+}
+
+.back-home:hover {
+  cursor: pointer;
+}

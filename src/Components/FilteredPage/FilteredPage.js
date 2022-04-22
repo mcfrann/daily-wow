@@ -11,7 +11,6 @@ const FilteredPage = ({ filteredWows }) => {
     <Tile
       key={(counter += 1)}
       movie={wow.movie}
-      totalWow={wow.total_wows_in_movie}
       currentWow={wow.current_wow_in_movie}
       fullLine={wow.full_line}
       audio={wow.audio}
@@ -24,7 +23,7 @@ const FilteredPage = ({ filteredWows }) => {
 
   return (
     <>
-      <h1 className='about-header'>{filteredWows[0].movie}</h1>
+      <h1 className='about-header'>Wows in {filteredWows[0].movie}</h1>
       <div className='filtered-container'>{filtered}</div>
       <button className='back-home' onClick={handleClick}>
         Back to Today's Wow

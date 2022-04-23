@@ -22,3 +22,25 @@
 .play-wow:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 850px) {
+  .wow-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd166;
+    border: 5px solid black;
+    border-radius: 1em;
+    height: 30vh;
+    width: 70vw;
+    margin: 5%;
+    padding: 1em;
+    text-align: center;
+  }
+
+  .play-wow {
+    width: 25vw;
+    height: 4vh;
+  }
+}

@@ -14,7 +14,7 @@
 .back-home {
   background-color: #06d6a0;
   font-family: 'Anybody', cursive;
-  border: 3px solid black;
+  border: 4px solid black;
   border-radius: 1em;
   height: 5vh;
   width: 15vw;
@@ -22,4 +22,35 @@
 
 .back-home:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  .filtered-container {
+    width: 90vw;
+    margin-top: 0;
+  }
+
+  .back-home {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .filtered-container {
+    height: 90vh;
+  }
+
+  .back-home {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .about-windows {
+    height: 140vh;
+  }
+
+  .back-home {
+    width: 90vw;
+  }
 }

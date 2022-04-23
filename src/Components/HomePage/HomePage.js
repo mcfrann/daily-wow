@@ -13,7 +13,7 @@ const HomePage = ({ todaysWow, error }) => {
     <>
       <h1 className='about-header'>Your Daily Wow</h1>
       <div className='about-text-container'>
-        {todaysWow !== [] && !error ? (
+        {todaysWow.length !== 0 && !error ? (
           <>
             <p className='about-text'>
               Today's wow was featured in the movie {todaysWow.movie}, directed
@@ -30,7 +30,7 @@ const HomePage = ({ todaysWow, error }) => {
               Click on Owen to hear it!
             </p>
           </>
-        ) : todaysWow === [] && error ? (
+        ) : todaysWow.length === 0 && error ? (
           <p className='about-text'>{error}</p>
         ) : (
           <p className='about-text'>Loading...</p>

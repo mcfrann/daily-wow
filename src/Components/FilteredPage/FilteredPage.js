@@ -1,7 +1,6 @@
 import './FilteredPage.css'
 import Tile from '../Tile/Tile'
-import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const FilteredPage = ({ filteredWows }) => {
   const navigate = useNavigate()

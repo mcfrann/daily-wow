@@ -15,3 +15,14 @@
 .owen-graphic:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 850px) {
+  .owen-container {
+    height: 80vh;
+    width: 100vw;
+  }
+
+  .owen-graphic {
+    width: 100%;
+  }
+}

@@ -101,7 +101,7 @@ const App = () => {
               ></input>
             </form>
             <img
-              className='search-img'
+              className='search-img top'
               src={search}
               alt='search icon'
               onClick={handleClick}
@@ -123,7 +123,7 @@ const App = () => {
             <div className='bottom-nav'>
               <form>
                 <input
-                  className='search'
+                  className='search-bottom'
                   value={input}
                   onChange={updateInput}
                   type='text'
@@ -132,7 +132,7 @@ const App = () => {
                 ></input>
               </form>
               <img
-                className='search-img'
+                className='search-img bottom'
                 src={search}
                 alt='search icon'
                 onClick={handleClick}

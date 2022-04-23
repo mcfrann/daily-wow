@@ -1,29 +1,27 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import HomePage from './Components/HomePage/HomePage'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import FilteredPage from './Components/FilteredPage/FilteredPage'
-import owen from './images/owen-silent.jpg'
+import Owen from './Components/Owen/Owen'
+import Oops from './Components/Oops/Oops'
+import owen from './images/owen.jpg'
+import owen2 from './images/owen-w.JPG'
+import owen3 from './images/owen-o.JPG'
 import search from './images/search.png'
 
 const App = () => {
   const [todaysWow, setTodaysWow] = useState([])
   const [error, setError] = useState('')
-  const [owenGraphic, setOwenGraphic] = useState('')
   const [filteredWows, setFilteredWows] = useState([])
   const [allWows, setAllWows] = useState([])
-  const [header, setHeader] = useState('Your Daily Wow')
-  const [page, setPage] = useState('home')
+  const [input, setInput] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchRandom()
     fetchAll()
   }, [])
-
-  const start = () => {
-    const audio = new Audio(todaysWow.audio)
-    audio.play()
-  }
 
   const fetchRandom = () => {
     return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/random')
@@ -53,65 +51,81 @@ const App = () => {
 
   const fetchAll = () => {
     return fetch('https://owen-wilson-wow-api.herokuapp.com/wows/ordered/0-90')
-      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) {
+          setError('Wow. Nothing is here.')
+        } else {
+          return res.json()
+        }
+      })
       .then((movies) => {
         setAllWows((previousMovies) => movies)
       })
-      .catch((error) => setError('Wow.There are no movies.'))
   }
 
-  const findWow = () => {
-    const searchInput = document.querySelector('.search').value.toString()
-    if (!searchInput) {
-      alert('please insert an Owen Wilson movie')
-    } else {
-      setFilteredWows(allWows.filter((movie) => movie.movie == searchInput))
-      setPage('filtered')
+  const handleClick = (e) => {
+    e.preventDefault()
+    const filtered = []
+    for (let i = 0; i < allWows.length; i++) {
+      if (input.toLowerCase() === allWows[i].movie.toLowerCase()) {
+        filtered.push(allWows[i])
+      }
     }
-    setHeader(`Wows in ${searchInput}`)
-    searchInput = ''
+    if (!input) {
+      alert('please insert an Owen Wilson movie')
+    } else if (input && filtered.length === 0) {
+      navigate('/oops')
+      setInput('')
+    } else if (input && filtered.length > 0) {
+      setFilteredWows(filtered)
+      setInput('')
+      navigate('/filtered')
+    }
+  }
+
+  const updateInput = (e) => {
+    setInput(e.target.value)
   }
 
   return (
     <section className='App'>
       <div className='page-container'>
-        <div className='owen-container'>
-          <img
-            className='owen-graphic'
-            src={owen}
-            alt='owen graphic'
-            onClick={start}
-          />
-          {/*set state to image of owen w/ mouth closed. On click, state changes to mouth open, after timeout back to closed.*/}
-        </div>
+        <Owen todaysWow={todaysWow} />
         <div className='about-container'>
           <div className='top-nav'>
-            <input
-              className='search'
-              type='text'
-              placeholder='wows by movie'
-            ></input>
+            <form>
+              <input
+                className='search'
+                value={input}
+                onChange={updateInput}
+                type='text'
+                placeholder='wows by movie'
+                required
+              ></input>
+            </form>
             <img
               className='search-img'
               src={search}
               alt='search icon'
-              onClick={findWow}
+              onClick={handleClick}
             />
           </div>
           <div className='about-windows'>
-            <h1 className='about-header'>{header}</h1>
-            {page === 'home' ? (
-              <HomePage path='/' todaysWow={todaysWow} error={error} />
-            ) : (
-              <FilteredPage path='/filtered' filteredWows={filteredWows} />
-            )}
+            <Routes>
+              <Route
+                exact
+                path='/'
+                element={<HomePage todaysWow={todaysWow} error={error} />}
+              />
+              <Route
+                path='/filtered'
+                element={<FilteredPage filteredWows={filteredWows} />}
+              />
+              <Route path='/oops' element={<Oops />} />
+            </Routes>
           </div>
         </div>
       </div>
-      <Routes>
-        <Route exact path='/' element={HomePage} />
-        <Route path='/filtered' element={FilteredPage} />
-      </Routes>
     </section>
   )
 }

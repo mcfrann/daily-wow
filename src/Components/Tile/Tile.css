@@ -5,4 +5,20 @@
   height: 30vh;
   width: 30vw;
   margin: 5%;
+  padding: 1em;
+}
+
+.play-wow {
+  background-color: #06d6a0;
+  font-family: 'Anybody', cursive;
+  border: 3px solid black;
+  border-radius: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  height: 3.5vh;
+  width: 5vw;
+}
+
+.play-wow:hover {
+  cursor: pointer;
 }

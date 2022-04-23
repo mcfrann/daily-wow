@@ -1,14 +1,21 @@
-.filtered-container {
+.oops-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow: scroll;
-  height: 50vh;
+  height: 20vh;
   width: 40vw;
   border: 5px solid black;
   border-radius: 1em;
   background-color: #ef476f;
   margin-bottom: 2em;
+}
+
+.oops-text {
+  margin: 1em;
+  line-height: 2;
+  text-align: center;
 }
 
 .back-home {

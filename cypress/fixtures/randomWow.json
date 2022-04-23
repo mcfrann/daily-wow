@@ -1,0 +1,22 @@
+[
+  {
+    "movie": "The Internship",
+    "year": 2013,
+    "release_date": "2013-05-29",
+    "director": "Shawn Levy",
+    "character": "Nick Campbell",
+    "movie_duration": "02:05:02",
+    "timestamp": "00:40:45",
+    "full_line": "Wow!",
+    "current_wow_in_movie": 2,
+    "total_wows_in_movie": 5,
+    "poster": "https://images.ctfassets.net/bs8ntwkklfua/6XhmTpc1PoiTf0q1nDYMyv/594947f72b4dba7f3c24938a680dd603/The_Internship_Poster.jpg",
+    "video": {
+      "1080p": "https://videos.ctfassets.net/bs8ntwkklfua/2HrgjW55Ubyibrj5jWCONN/8cc67817fcf43821fa808f45f47b771d/The_Internship_Wow_2_1080p.mp4",
+      "720p": "https://videos.ctfassets.net/bs8ntwkklfua/1quea0uaxZG0XhG2OZHyiN/bc567d11211c484c57df81ebc2738da5/The_Internship_Wow_2_720p.mp4",
+      "480p": "https://videos.ctfassets.net/bs8ntwkklfua/7cVSPYGUbn5jm7Lab0lafw/b5071272d7146d70ab1dbf08f4a1319b/The_Internship_Wow_2_480p.mp4",
+      "360p": "https://videos.ctfassets.net/bs8ntwkklfua/6QCTva7iEh8WRGFRbOL62X/f7cbf460bc7f6841818390b0f5fdcf45/The_Internship_Wow_2_360p.mp4"
+    },
+    "audio": "https://assets.ctfassets.net/bs8ntwkklfua/2T6B1CgkHRARp0UT9ZTbct/c0019c6d2664f5d2f8baf7b1f95beb6d/The_Internship_Wow_2.mp3"
+  }
+]

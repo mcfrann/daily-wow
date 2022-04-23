@@ -5,9 +5,6 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import FilteredPage from './Components/FilteredPage/FilteredPage'
 import Owen from './Components/Owen/Owen'
 import Oops from './Components/Oops/Oops'
-import owen from './images/owen.jpg'
-import owen2 from './images/owen-w.JPG'
-import owen3 from './images/owen-o.JPG'
 import search from './images/search.png'
 
 const App = () => {
@@ -123,6 +120,24 @@ const App = () => {
               />
               <Route path='/oops' element={<Oops />} />
             </Routes>
+            <div className='bottom-nav'>
+              <form>
+                <input
+                  className='search'
+                  value={input}
+                  onChange={updateInput}
+                  type='text'
+                  placeholder='wows by movie'
+                  required
+                ></input>
+              </form>
+              <img
+                className='search-img'
+                src={search}
+                alt='search icon'
+                onClick={handleClick}
+              />
+            </div>
           </div>
         </div>
       </div>

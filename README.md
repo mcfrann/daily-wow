@@ -6,8 +6,7 @@ Francesca McConnell | [Github](https://github.com/mcfrann)
 
 ### Deploy Link
 
-REPLACE LINK
-Check out our deployed game [here](https://roll-for-initiative-turing.herokuapp.com/).
+Check out the deployed site [here](https://daily-wow.herokuapp.com/).
 
 ## Table of Contents
 

@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Daily Wow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### Created by:
 
-## Available Scripts
+Francesca McConnell | [Github](https://github.com/mcfrann)
 
-In the project directory, you can run:
+### Deploy Link
 
-### `npm start`
+REPLACE LINK
+Check out our deployed game [here](https://roll-for-initiative-turing.herokuapp.com/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Overview](#overview)
+- [Technologies](#technologies)
+- [Site Examples](#screenshots)
+- [Install and Setup](#Install)
+- [Project Goals](#Goals)
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Need an extra little dose of positivity to get you through your day? Introducing Daily Wow, an application that randomly chooses a moment Owen Wilson has said 'wow' to give you a little encouragement. Have a certain 'wow' in mind? Use the search bar to search for 'wow's by movie title. Make sure to click on Owen to see him say 'wow' to you, himself!
 
-### `npm run build`
+## Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- JavaScript
+- React
+- Router
+- Cypress
+- HTML
+- CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The goal of this project was to sharpen my React skills while implementing the v6 Router, asynchronous JavaScript, REST API, mobile-friendly design, and Cypress testing. I also wanted to take full advantage of the creative liberty of this project and trigger a self-made animation of Owen Wilson saying today's random 'wow.' Daily Wow showcases my ability to create a simple, yet creative React application.
 
-### `npm run eject`
+## Site Examples
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![siteGIF](https://media.giphy.com/media/cQaHXb6xvazCSBfNU3/giphy.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![mobileHome](https://i.imgur.com/E4BS68W.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![mobileSearch](https://i.imgur.com/y5Kxv9x.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![mobileOops](https://i.imgur.com/6T9TrHX.png)
 
-## Learn More
+## Install and Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this app locally:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Run `git clone git@github.com:mcfrann/daily-wow.git` in your command line
+2. Run `cd daily-wow` to navigate into the repository
+3. Run `npm install`
+4. Run `npm start`
 
-### Code Splitting
+Alternatively, visit the deployment link above!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Attributions
 
-### Analyzing the Bundle Size
+Thanks to my project manager, Scott Ertmer.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Check out the spec sheet [here](https://frontend.turing.edu/projects/module-3/showcase.html)

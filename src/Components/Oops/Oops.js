@@ -13,8 +13,8 @@ const Oops = () => {
       <h1 className='about-header'>Oops</h1>
       <div className='oops-container'>
         <p className='oops-text'>
-          Wow. This is embarassing. There's nothing here. Please try your search
-          again.
+          Wow. This is embarrassing. There's nothing here. Please try your
+          search again.
         </p>
       </div>
       <button className='back-home' onClick={handleClick}>

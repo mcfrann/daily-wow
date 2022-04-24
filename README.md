@@ -41,8 +41,6 @@ The goal of this project was to sharpen my React skills while implementing the v
 
 ![mobileSearch](https://i.imgur.com/y5Kxv9x.png)
 
-![mobileOops](https://i.imgur.com/6T9TrHX.png)
-
 ## Install and Setup
 
 To run this app locally:

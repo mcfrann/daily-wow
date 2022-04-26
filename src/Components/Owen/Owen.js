@@ -10,9 +10,9 @@ const Owen = ({ todaysWow }) => {
   const start = () => {
     const audio = new Audio(todaysWow.audio)
     audio.play()
-    setTimeout(() => setOwenGraphic(owen2), 200)
+    // setTimeout(() => setOwenGraphic(owen2), 200)
     setTimeout(() => setOwenGraphic(owen3), 400)
-    setTimeout(() => setOwenGraphic(owen2), 600)
+    // setTimeout(() => setOwenGraphic(owen2), 600)
     setTimeout(() => setOwenGraphic(owen), 800)
   }
 

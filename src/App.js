@@ -90,7 +90,7 @@ const App = () => {
         <Owen todaysWow={todaysWow} />
         <div className='about-container'>
           <div className='top-nav'>
-            <form>
+            <form onSubmit={handleClick}>
               <input
                 className='search'
                 value={input}
@@ -100,12 +100,9 @@ const App = () => {
                 required
               ></input>
             </form>
-            <img
-              className='search-img top'
-              src={search}
-              alt='search icon'
-              onClick={handleClick}
-            />
+            <button className='search-button' type='submit'>
+              <img className='search-img top' src={search} alt='search icon' />
+            </button>
           </div>
           <div className='about-windows'>
             <Routes>

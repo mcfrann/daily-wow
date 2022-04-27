@@ -115,6 +115,12 @@ p {
   }
 }
 
+.search-button {
+  font-size: 0;
+  background: none;
+  border: none;
+}
+
 @media screen and (max-width: 380px) {
   .about-windows {
     height: 120vh;

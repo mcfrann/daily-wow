@@ -101,7 +101,12 @@ const App = () => {
               ></input>
             </form>
             <button className='search-button' type='submit'>
-              <img className='search-img top' src={search} alt='search icon' />
+              <img
+                className='search-img top'
+                src={search}
+                alt='search icon'
+                onClick={handleClick}
+              />
             </button>
           </div>
           <div className='about-windows'>

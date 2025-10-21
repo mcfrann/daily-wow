@@ -55,6 +55,6 @@ Alternatively, visit the deployment link above!
 ## Attributions
 
 Thanks to my project manager, Scott Ertmer.
-Thanks to Avi Mamenko, who created the Owen Wilson [API](https://owen-wilson-wow-api.herokuapp.com/).
+Thanks to Avi Mamenko, who created the Owen Wilson [API](https://owen-wilson-wow-api.onrender.com/).
 
 Check out the spec sheet [here](https://frontend.turing.edu/projects/module-3/showcase.html)

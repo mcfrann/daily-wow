@@ -6,22 +6,22 @@ import FilteredPage from "./Components/FilteredPage/FilteredPage";
 import Owen from "./Components/Owen/Owen";
 import Oops from "./Components/Oops/Oops";
 import search from "./images/search.png";
+import owen from "./images/owen.jpg";
+import owen2 from "./images/owen-w.JPG";
+import owen3 from "./images/owen-o.JPG";
 
 const App = () => {
   const [todaysWow, setTodaysWow] = useState([]);
+  const [currentWow, setCurrentWow] = useState({});
   const [error, setError] = useState("");
   const [filteredWows, setFilteredWows] = useState([]);
   const [allWows, setAllWows] = useState([]);
   const [input, setInput] = useState("");
+  const [owenGraphic, setOwenGraphic] = useState(owen);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchRandom();
-    fetchAll();
-  }, []);
-
-  const fetchRandom = () => {
-    return fetch("https://owen-wilson-wow-api.onrender.com/wows/random")
+    fetch("https://owen-wilson-wow-api.onrender.com/wows/random")
       .then((res) => {
         if (!res.ok) {
           setError("Wow. Nothing is here.");
@@ -42,12 +42,10 @@ const App = () => {
           total_wows_in_movie: wow[0].total_wows_in_movie,
           audio: wow[0].audio,
         };
-        setTodaysWow((previousWow) => randomWow);
+        setTodaysWow(randomWow);
+        setCurrentWow(randomWow);
       });
-  };
-
-  const fetchAll = () => {
-    return fetch("https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90")
+    fetch("https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90")
       .then((res) => {
         if (!res.ok) {
           setError("Wow. Nothing is here.");
@@ -56,15 +54,22 @@ const App = () => {
         }
       })
       .then((movies) => {
-        setAllWows((previousMovies) => movies);
+        setAllWows(movies);
       });
-  };
+  }, []);
+
+  // Sync currentWow to todaysWow when on home route
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setCurrentWow(todaysWow);
+    }
+  }, [todaysWow]);
 
   const handleClick = (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     const filtered = [];
     for (let i = 0; i < allWows.length; i++) {
-      if (input.toLowerCase() === allWows[i].movie.toLowerCase()) {
+      if (allWows[i].movie.toLowerCase().includes(input.toLowerCase())) {
         filtered.push(allWows[i]);
       }
     }
@@ -75,7 +80,6 @@ const App = () => {
       setInput("");
     } else if (input && filtered.length > 0) {
       setFilteredWows(filtered);
-      setInput("");
       navigate("/filtered");
     }
   };
@@ -84,10 +88,19 @@ const App = () => {
     setInput(e.target.value);
   };
 
+  const start = () => {
+    const audio = new Audio(currentWow.audio);
+    audio.play();
+    setTimeout(() => setOwenGraphic(owen2), 200);
+    setTimeout(() => setOwenGraphic(owen3), 400);
+    setTimeout(() => setOwenGraphic(owen2), 600);
+    setTimeout(() => setOwenGraphic(owen), 800);
+  };
+
   return (
     <section className="App">
       <div className="page-container">
-        <Owen todaysWow={todaysWow} />
+        <Owen owenGraphic={owenGraphic} start={start} />
         <div className="about-container">
           <div className="top-nav">
             <form onSubmit={handleClick}>
@@ -118,7 +131,17 @@ const App = () => {
               />
               <Route
                 path="/filtered"
-                element={<FilteredPage filteredWows={filteredWows} />}
+                element={
+                  <FilteredPage
+                    filteredWows={filteredWows}
+                    setCurrentWow={setCurrentWow}
+                    currentWow={currentWow}
+                    todaysWow={todaysWow}
+                    start={start}
+                    input={input}
+                    setInput={setInput}
+                  />
+                }
               />
               <Route path="/oops" element={<Oops />} />
             </Routes>
